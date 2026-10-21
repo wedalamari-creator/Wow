@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="format-detection" content="telephone=no">
+<title>الشركة العقارية | عمارة ٣٦ شقة استثمارية - جدة</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --paper:#E9F2EB; --paper-2:#DCEBE1;
+  --forest-deep:#16301F; --forest:#2D5443; --green:#4A7C5E;
+  --sage:#8FB89E;
+  --gold:#B8974A; --gold-deep:#9A7C34; --gold-line:rgba(184,151,74,.45);
+  --muted:#4A5B51; --cream:#FAF7EE;
+  --radius:12px; --radius-sm:7px;
+  --pad:clamp(16px,3vw,28px);
+  --font-main:'Cairo','Segoe UI',Tahoma,sans-serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+
+body{
+  margin:0; min-height:100vh;
+  font-family:var(--font-main); color:var(--forest-deep);
+  display:flex; flex-direction:column; align-items:center;
+  padding:clamp(16px,3vw,32px) clamp(10px,3vw,20px) clamp(24px,4vw,44px);
+  -webkit-font-smoothing:antialiased;
+  background:
+    radial-gradient(ellipse 900px 700px at 12% 6%,rgba(143,184,158,.55) 0%,transparent 58%),
+    radial-gradient(ellipse 820px 620px at 92% 18%,rgba(74,124,94,.22) 0%,transparent 52%),
+    radial-gradient(ellipse 720px 820px at 78% 94%,rgba(143,184,158,.46) 0%,transparent 56%),
+    linear-gradient(165deg,#D6E9DD 0%,#C6DFD1 48%,#D2E6D7 100%);
+  background-attachment:fixed;
+}
+
+img{max-width:100%}
+a,a:link,a:visited,a:hover,a:active{text-decoration:none;color:inherit}
+
+.ad-card{
+  width:100%; max-width:1040px; position:relative; overflow:hidden;
+  border-radius:var(--radius); border:1px solid var(--sage);
+  background-color:var(--paper);
+  background-image:
+    radial-gradient(ellipse 360px 290px at 92% 6%,rgba(143,184,158,.42) 0%,transparent 62%),
+    radial-gradient(ellipse 300px 360px at 2% 54%,rgba(74,124,94,.12) 0%,transparent 58%),
+    linear-gradient(168deg,#EAF3EC 0%,#DEEDE4 52%,#D5E9DD 100%);
+  box-shadow:0 40px 100px -20px rgba(22,48,31,.30),0 10px 28px -12px rgba(22,48,31,.16);
+  isolation:isolate;
+}
+.ad-card::before{
+  content:''; position:absolute; inset:0 0 auto; height:3px; z-index:5;
+  background:linear-gradient(90deg,transparent 0%,var(--gold) 50%,transparent 100%);
+  opacity:.7;
+}
+
+/* ── هيدر ── */
+.ad-header{
+  padding:14px var(--pad) 10px;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.brand{display:flex; align-items:center; gap:10px; min-width:0}
+.logos-wrapper{display:flex; align-items:center; gap:5px}
+.logo-slot{
+  width:38px; height:38px; border-radius:50%; overflow:hidden;
+  display:grid; place-items:center; background:#FFF;
+  border:1.5px solid var(--sage);
+}
+.logo-slot img{width:100%; height:100%; object-fit:cover; display:block}
+.company-name{font-size:15px; font-weight:800; color:var(--forest-deep); white-space:nowrap}
+.top-badge{
+  display:inline-flex; align-items:center; gap:5px;
+  padding:5px 10px; border-radius:100px;
+  font-size:10px; font-weight:700; color:var(--gold-deep);
+  background:linear-gradient(180deg,#FFF,#FAF7EE);
+  border:1px solid var(--gold-line);
+}
+.top-badge .dot{width:5px; height:5px; border-radius:50%; background:var(--gold)}
+
+/* ═══ شريط الرخصة ═══ */
+.license-bar{
+  padding:7px var(--pad);
+  background:linear-gradient(90deg,rgba(184,151,74,.08),rgba(143,184,158,.14),rgba(184,151,74,.08));
+  border-top:1px solid rgba(184,151,74,.30);
+  border-bottom:1px solid rgba(143,184,158,.35);
+  display:flex; align-items:center; justify-content:center;
+  gap:8px; flex-wrap:wrap; text-align:center;
+  font-size:10px; font-weight:700; color:var(--forest);
+}
+.license-bar strong{color:var(--gold-deep); font-weight:900; font-size:11px; margin-inline-start:2px}
+.license-bar .sep{color:var(--gold); opacity:.6}
+.license-bar .issuer{color:var(--muted); font-weight:600}
+
+/* ── الجسم ── */
+.ad-body{
+  display:grid;
+  grid-template-columns:minmax(220px,0.72fr) minmax(360px,1.28fr);
+  gap:16px; padding:14px var(--pad) 14px; align-items:stretch;
+}
+
+.building-figure{
+  margin:0; position:relative; overflow:hidden;
+  border-radius:var(--radius-sm); border:1px solid var(--sage);
+  background:#DCEAE0; min-height:380px;
+}
+.building-figure img.bg-img{position:absolute; inset:0; width:100%; height:100%; object-fit:cover; display:block}
+.building-figure::after{
+  content:''; position:absolute; inset:auto 0 0; height:40%;
+  background:linear-gradient(180deg,transparent,rgba(22,48,31,.30));
+}
+.finish-badge{
+  position:absolute; bottom:10px; right:10px; z-index:2;
+  display:inline-flex; align-items:center; gap:6px;
+  padding:5px 11px; border-radius:100px;
+  font-size:10.5px; font-weight:700; color:var(--forest-deep);
+  background:rgba(250,247,238,.95); border:1px solid rgba(255,255,255,.7);
+}
+.finish-badge .dot{width:6px; height:6px; border-radius:50%; background:var(--green)}
+
+/* ═══ ختم الصورة (اليسار الأعلى) ═══ */
+.building-stamp{
+  position:absolute;
+  top:14px; left:14px;
+  width:80px; height:80px;
+  z-index:3;
+  object-fit:contain;
+  opacity:0.95;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+}
+
+.col-content{display:flex; flex-direction:column; min-width:0}
+.headline{margin:0 0 6px; font-size:26px; font-weight:900; line-height:1.22; color:var(--forest-deep)}
+.headline .accent{color:var(--gold-deep)}
+.subline{margin:0 0 10px; font-size:12px; font-weight:600; line-height:1.55; color:var(--muted)}
+
+.opportunity-strip{
+  display:flex; align-items:center; gap:10px;
+  margin:0 0 10px; padding:8px 12px;
+  border-radius:var(--radius-sm); border:1px solid rgba(143,184,158,.7);
+  background:#FFF;
+}
+.opp-icon{width:30px; height:30px; display:grid; place-items:center; border-radius:50%; color:var(--gold-deep); background:rgba(184,151,74,.1); flex-shrink:0}
+.opp-icon svg{width:15px; height:15px}
+.opp-text{flex:1; display:flex; flex-direction:column; gap:1px}
+.opp-title{font-size:12.5px; font-weight:800; color:var(--gold-deep)}
+.opp-desc{font-size:10.5px; font-weight:600; color:var(--muted)}
+.opp-counter{min-width:48px; padding:4px 8px; text-align:center; border-radius:6px; border:1px solid rgba(74,124,94,.3); background:var(--paper)}
+.opp-counter .num{font-size:18px; font-weight:900; color:var(--green); line-height:1}
+.opp-counter .lbl{font-size:8px; font-weight:700; color:var(--forest); margin-top:1px}
+
+.features{
+  list-style:none; margin:0 0 10px; padding:8px 10px;
+  display:grid; grid-template-columns:repeat(2,1fr); gap:6px 14px;
+  border-radius:var(--radius-sm);
+  background:rgba(255,255,255,.6);
+  border:1px solid rgba(143,184,158,.5);
+}
+.feature{display:flex; align-items:center; gap:7px; min-width:0}
+.feature-icon{width:22px; height:22px; display:grid; place-items:center; border-radius:50%; color:var(--green); background:var(--paper-2); flex-shrink:0}
+.feature-icon svg{width:12px; height:12px}
+.feature-text{font-size:11px; font-weight:800; color:var(--forest-deep); white-space:nowrap}
+
+.investment-opps{
+  position:relative; padding:10px 12px 8px;
+  border-radius:var(--radius-sm);
+  background:linear-gradient(165deg,#FFF,#FAF7EE);
+  border:1px solid rgba(143,184,158,.55);
+}
+.investment-opps::before{
+  content:''; position:absolute; inset:0 0 auto; height:3px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+}
+.opps-header{margin:0 0 8px; font-size:11.5px; font-weight:800; line-height:1.4; color:var(--forest-deep); text-align:center}
+.opps-list{list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(4,1fr); gap:0}
+.opp-item{
+  display:flex; flex-direction:column; gap:3px;
+  padding:2px 8px;
+  border-inline-start:1px solid rgba(143,184,158,.35);
+}
+.opp-item:first-child{border-inline-start:none}
+.opp-num{
+  width:18px; height:18px; display:grid; place-items:center; border-radius:50%;
+  font-size:10px; font-weight:900; color:var(--cream);
+  background:linear-gradient(135deg,#D9C08A,var(--gold));
+}
+.opp-label{font-size:10px; font-weight:800; line-height:1.3; color:var(--forest-deep)}
+.opp-sub{font-size:8.5px; font-weight:600; color:var(--muted)}
+.opp-badge{display:inline-block; margin-top:2px; padding:0 4px; border-radius:100px; font-size:7px; font-style:normal; font-weight:800; color:var(--gold-deep); background:rgba(184,151,74,.13); border:1px solid var(--gold-line); width:fit-content}
+.opp-item-highlight .opp-label{color:var(--gold-deep)}
+
+.expertise-note{margin:8px 0 0; padding:6px 9px; border-radius:5px; background:rgba(143,184,158,.14); border-right:2px solid var(--gold); font-size:9.5px; font-weight:700; line-height:1.5; color:var(--forest)}
+.expertise-note svg{display:inline-block; width:10px; height:10px; vertical-align:-1px; margin-inline-end:3px; color:var(--gold-deep)}
+
+/* ═══ الشريط السفلي ═══ */
+.ad-bottom{
+  padding:12px var(--pad);
+  border-top:1px solid rgba(143,184,158,.35);
+  background:rgba(255,255,255,.25);
+  display:flex;
+  flex-direction:column;
+  gap:8px;
+}
+
+.contacts-row{
+  display:flex;
+  align-items:center;
+  gap:0;
+  background:#FFF;
+  border:1px solid rgba(143,184,158,.55);
+  border-radius:var(--radius-sm);
+  padding:6px 4px;
+}
+
+.contact-block{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  flex:0 0 auto;
+  padding:4px 10px;
+  min-width:0;
+}
+.divider-v{
+  width:1px;
+  align-self:stretch;
+  background:rgba(143,184,158,.4);
+  margin:2px 0;
+}
+.contact-icon{
+  width:30px; height:30px; flex-shrink:0;
+  display:grid; place-items:center; border-radius:50%;
+  color:var(--green); background:var(--paper); border:1px solid var(--sage);
+}
+.contact-icon svg{width:14px; height:14px}
+.contact-body{display:flex; flex-direction:column; gap:0; min-width:0}
+.contact-label{font-size:9.5px; font-weight:600; color:var(--muted); white-space:nowrap}
+.contact-number{font-size:14px; font-weight:800; color:var(--forest-deep) !important; direction:ltr; text-align:right; white-space:nowrap}
+
+.qr-inline{
+  display:flex;
+  align-items:center;
+  gap:6px;
+  flex:0 0 auto;
+  padding:4px 10px;
+}
+.qr-box{
+  width:52px; height:52px;
+  padding:2px;
+  display:grid; place-items:center; overflow:hidden;
+  border-radius:4px; background:#FFF; border:1px solid var(--sage);
+}
+.qr-box img{width:100%; height:100%; display:block; object-fit:contain}
+.qr-label{font-size:8.5px; font-weight:700; line-height:1.3; color:var(--forest); max-width:44px; text-align:center}
+
+.website-strip-full{
+  display:flex; align-items:center; justify-content:center; gap:7px;
+  padding:6px 12px;
+  background:#FFF;
+  border:1px solid rgba(143,184,158,.55);
+  border-radius:var(--radius-sm);
+  font-size:10.5px;
+}
+.site-icon{width:12px; height:12px; color:var(--gold-deep); flex-shrink:0}
+.website-link{font-size:11px; font-weight:800; color:var(--gold-deep); direction:ltr; white-space:nowrap}
+.website-divider{width:1px; height:10px; background:var(--gold-line)}
+.website-tagline{font-size:9.5px; font-weight:600; color:var(--muted); white-space:nowrap}
+
+.tools{display:flex; justify-content:center; margin-top:18px}
+.download-btn{
+  display:inline-flex; align-items:center; gap:8px;
+  padding:10px 26px; border:1px solid rgba(74,124,94,.55);
+  border-radius:6px; font-family:var(--font-main); font-size:12px; font-weight:700;
+  color:var(--cream); cursor:pointer;
+  background:linear-gradient(135deg,var(--green),var(--forest));
+}
+.download-btn svg{width:14px; height:14px}
+
+@media (max-width:980px){
+  .ad-body{grid-template-columns:1fr; gap:12px}
+  .building-figure{min-height:0; aspect-ratio:16/9}
+  .opps-list{grid-template-columns:repeat(2,1fr)}
+  .opp-item:nth-child(3){border-inline-start:none}
+  .opp-item:nth-child(-n+2){padding-bottom:6px; border-bottom:1px solid rgba(143,184,158,.25)}
+}
+@media (max-width:760px){
+  .contacts-row{flex-wrap:wrap; justify-content:center}
+  .divider-v{display:none}
+}
+@media (max-width:520px){
+  .features{grid-template-columns:1fr}
+  .opps-list{grid-template-columns:1fr}
+  .opp-item{padding:4px 0; border-inline-start:none !important; border-bottom:1px solid rgba(143,184,158,.25)}
+  .opp-item:last-child{border-bottom:none}
+  .opp-counter{display:none}
+
+  .contact-block{padding:4px 6px; gap:6px}
+  .qr-inline{padding:4px 6px}
+  .qr-box{width:44px; height:44px}
+  .qr-label{display:none}
+  .contact-number{font-size:12.5px}
+  .contact-label{font-size:8.5px}
+  .contact-icon{width:26px; height:26px}
+  .contact-icon svg{width:12px; height:12px}
+  .license-bar{font-size:9px; padding:6px 10px; gap:5px}
+  .license-bar strong{font-size:9.5px}
+  .download-btn{width:100%; justify-content:center}
+}
+
+/* ═══ إعدادات الطباعة ═══ */
+@media print {
+  @page { margin: 10mm; size: A4 portrait; }
+  body { 
+    background: #FFF !important; 
+    padding: 0; 
+    -webkit-print-color-adjust: exact !important; 
+    print-color-adjust: exact !important; 
+  }
+  .tools { display: none !important; }
+  .ad-card { 
+    box-shadow: none !important; 
+    border: 1px solid #8FB89E !important;
+    max-width: 100% !important;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<article class="ad-card" id="adCard">
+
+  <header class="ad-header">
+    <div class="brand">
+      <div class="logos-wrapper">
+        <div class="logo-slot" style="background:#000; border-color:var(--gold);">
+          <img src="n.jpeg" alt="ازيز" onerror="this.style.display='none'">
+        </div>
+      </div>
+      <div class="company-name">الشركة العقارية</div>
+    </div>
+    <div class="top-badge"><span class="dot"></span>فرصة استثمارية</div>
+  </header>
+
+  <div class="license-bar">
+    <span>رخصة المعلن <strong>7037097552</strong></span>
+    <span class="sep">•</span>
+    <span>رخصة فال <strong>1200023388</strong></span>
+    <span class="sep">•</span>
+    <span class="issuer">مرخص من الهيئة العامة للعقار</span>
+  </div>
+
+  <div class="ad-body">
+    <figure class="building-figure">
+      <img class="bg-img" src="a.png" alt="الشركة العقارية في جدة">
+      
+      <img src="stamp-circle.png" alt="ختم" class="building-stamp" onerror="this.style.display='none'">
+      
+      <div class="finish-badge"><span class="dot"></span>مرحلة التشطيب النهائي</div>
+    </figure>
+
+    <div class="col-content">
+      <h1 class="headline">٣٦ شقة استثمارية<br><span class="accent">في قلب جدة</span></h1>
+      <p class="subline">إمكانية التقسيم بمدخل خاص • جودة تشطيب عالية</p>
+
+      <div class="opportunity-strip">
+        <span class="opp-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 14 L6 22 L9.5 20 L12 22 L12 15"/><path d="M16 14 L18 22 L14.5 20 L12 22 L12 15"/><circle cx="12" cy="9" r="6"/></svg></span>
+        <div class="opp-text">
+          <div class="opp-title">فرصة استثمارية نادرة</div>
+          <div class="opp-desc">جاهز للتشغيل • تسليم قريب</div>
+        </div>
+        <div class="opp-counter">
+          <div class="num">٣٦</div>
+          <div class="lbl">وحدة</div>
+        </div>
+      </div>
+
+      <ul class="features">
+        <li class="feature"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V9l9-6 9 6v12z"/><circle cx="12" cy="14" r="2"/><path d="M12 16v3"/></svg></span><span class="feature-text">إدارة مبيعات</span></li>
+        <li class="feature"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21V5a2 2 0 0 1 2-2h6v18"/><path d="M13 21V3h6a2 2 0 0 1 2 2v16"/></svg></span><span class="feature-text">مدخلان لكل شقة</span></li>
+        <li class="feature"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="2" width="16" height="20" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2"/></svg></span><span class="feature-text">٣٦ شقة قابلة للتقسيم</span></li>
+        <li class="feature"><span class="feature-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="7.5" cy="15.5" r="4.5"/><path d="M10.5 12.5L20 3"/><path d="M16 7l2.5 2.5"/></svg></span><span class="feature-text">إدارة أملاك متكاملة</span></li>
+      </ul>
+
+      <section class="investment-opps">
+        <h2 class="opps-header">نتولى إدارة استثمارك في الفرص التي تختارها</h2>
+        <ol class="opps-list">
+          <li class="opp-item"><span class="opp-num">١</span><span class="opp-label">بيع الشقق بنظام التمليك</span><span class="opp-sub">كل شقة بصك مستقل</span></li>
+          <li class="opp-item"><span class="opp-num">٢</span><span class="opp-label">تشغيل المبنى بالكامل</span><span class="opp-sub">عائد إيجاري متصاعد</span></li>
+          <li class="opp-item"><span class="opp-num">٣</span><span class="opp-label">تشغيل مؤثث أو غير مؤثث</span><span class="opp-sub">خيارات متعددة</span></li>
+          <li class="opp-item opp-item-highlight"><span class="opp-num">٤</span><span class="opp-label">شقق مخدومة يومي / أسبوعي</span><span class="opp-sub">إشغال مرتفع</span><em class="opp-badge">الأعلى عائداً</em></li>
+        </ol>
+        <p class="expertise-note"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4-6.2-4.6-6.2 4.6 2.4-7.4L2 9.4h7.6z"/></svg>خبرة طويلة وشراكات مرخصة في مختلف المجالات العقارية والاستثمارية.</p>
+      </section>
+    </div>
+  </div>
+
+  <div class="ad-bottom">
+
+    <div class="contacts-row">
+
+      <div class="contact-block">
+        <span class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.37 1.9.72 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.35 1.85.59 2.81.72A2 2 0 0 1 22 16.92z"/></svg>
+        </span>
+        <span class="contact-body">
+          <span class="contact-label">للاستفسار والمبيعات</span>
+          <span class="contact-number">0500251313</span>
+        </span>
+      </div>
+
+      <span class="divider-v"></span>
+
+      <div class="qr-inline">
+        <div class="qr-box"><img id="qrImg" alt="QR"></div>
+        <div class="qr-label">امسح للتواصل<br>واتساب</div>
+      </div>
+
+      <span class="divider-v"></span>
+
+      <a class="contact-block" href="https://wa.me/966500253134" target="_blank" rel="noopener">
+        <span class="contact-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.5 2 2 6.5 2 12c0 1.8.5 3.5 1.3 5L2 22l5.2-1.3c1.4.8 3.1 1.3 4.8 1.3 5.5 0 10-4.5 10-10S17.5 2 12 2zm0 18.2c-1.6 0-3.1-.4-4.4-1.2l-.3-.2-3.2.8.8-3.1-.2-.3c-.8-1.4-1.2-2.9-1.2-4.4 0-4.5 3.7-8.2 8.2-8.2 4.5 0 8.2 3.7 8.2 8.2 0 4.5-3.7 8.2-8.2 8.2zm4.5-6.1c-.2-.1-1.3-.6-1.5-.7-.2-.1-.4-.1-.5.1-.2.2-.6.7-.7.9-.1.2-.3.2-.5.1-.2-.1-1-.4-1.9-1.2-.7-.6-1.2-1.4-1.3-1.6-.1-.2 0-.4.1-.5.1-.1.3-.3.4-.5.1-.2.2-.3.2-.5.1-.2 0-.4 0-.5-.1-.1-.5-1.3-.7-1.7-.2-.5-.4-.4-.5-.4h-.5c-.2 0-.5.1-.7.3-.2.2-.9.9-.9 2.1 0 1.2.9 2.4 1 2.6.1.2 1.8 2.8 4.4 3.9.6.3 1.1.4 1.5.5.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.5-.3z"/>
+          </svg>
+        </span>
+        <span class="contact-body">
+          <span class="contact-label">واتساب</span>
+          <span class="contact-number">0500253134</span>
+        </span>
+      </a>
+
+    </div>
+
+    <a class="website-strip-full" href="https://almazyadoffice.com" target="_blank">
+      <svg xmlns="http://www.w3.org/2000/svg" class="site-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+      <span class="website-link">almazyadoffice.com</span>
+      <span class="website-divider"></span>
+      <span class="website-tagline">الموقع الرسمي</span>
+    </a>
+
+  </div>
+
+</article>
+
+<div class="tools">
+  <button class="download-btn" id="downloadBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v12"/><path d="M7 11l5 5 5-5"/><path d="M4 20h16"/></svg>
+    تحميل التصميم كصورة عالية الدقة
+  </button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/qrcode-generator@1.4.4/qrcode.min.js"></script>
+<script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script>
+(function(){
+  function generateQR(){
+    try{
+      if(typeof qrcode!=='function') return;
+      var qr=qrcode(0,'M');
+      qr.addData('https://wa.me/966500253134');
+      qr.make();
+      var img=document.getElementById('qrImg');
+      if(img) img.src=qr.createDataURL(6,0);
+    }catch(e){console.error(e)}
+  }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',generateQR);
+  else generateQR();
+
+  document.getElementById('downloadBtn').addEventListener('click',async function(){
+    if(this.disabled) return;
+    var btn=this, orig=btn.innerHTML;
+    btn.innerHTML='جارٍ التصدير…'; btn.disabled=true;
+    
+    try{
+      if(document.fonts && document.fonts.ready) await document.fonts.ready;
+      var card = document.getElementById('adCard');
+      
+      var canvas=await html2canvas(card,{
+        backgroundColor: '#E9F2EB',
+        scale: 3, // دقة عالية جداً
+        useCORS: true,
+        allowTaint: true,
+        logging: false,
+        onclone: function(clonedDoc) {
+          var clonedCard = clonedDoc.getElementById('adCard');
+          if (clonedCard) {
+            clonedCard.style.boxShadow = 'none';
+            clonedCard.style.border = '1px solid #8FB89E';
+          }
+        }
+      });
+      
+      var dataUrl = canvas.toDataURL('image/png');
+      
+      // حل مشكلة سفاري (فتح في نافذة جديدة للحفظ اليدوي)
+      var newWindow = window.open();
+      if(newWindow) {
+          newWindow.document.write('<html><head><title>احفظ الصورة</title><meta name="viewport" content="width=device-width, initial-scale=1.0"></head><body style="margin:0; background:#222; display:flex; justify-content:center; align-items:center; height:100vh;"><img src="'+dataUrl+'" style="max-width:100%; max-height:100vh; object-fit:contain;" /></body></html>');
+          newWindow.document.title = "اضغط مطولاً على الصورة لحفظها";
+      } else {
+          alert('يرجى السماح بالنوافذ المنبثقة في سفاري لتتمكن من حفظ الصورة.');
+      }
+
+    }catch(e){
+      console.error(e); 
+      alert('تعذر التصدير. يرجى تجربة فتح الملف في متصفح آخر.');
+    }
+    finally{
+      btn.innerHTML=orig; 
+      btn.disabled=false;
+    }
+  });
+})();
+</script>
+</body>
+</html>
